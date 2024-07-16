@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'Avenir Next Bold';
+    src: url('AvenirNextLTPro-Bold.otf');
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Avenir Next Regular';
+    src: url('AvenirNextLTPro-Regular.otf');
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'SF Compact Text';
+    src: url('FontsFree-Net-SFCompactText-Regular.ttf');
+    font-style: normal;
+  }

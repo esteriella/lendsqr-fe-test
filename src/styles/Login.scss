@@ -1,0 +1,211 @@
+@import "./variable.scss";
+@import "./mixins.scss";
+@import url("../assets/fonts/font.css");
+
+// Styles
+.login-section {
+  @include flexbox(column, center, start);
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+
+  .form-section {
+    @include flexbox(row, space-between, center);
+    height: 100vh;
+    width: 100vw;
+    padding: 10px;
+
+    @include maxWidth(1024px) {
+      @include flexbox(column, center, center);
+      padding: 20px;
+    }
+  }
+
+  .logo-wrapper {
+    @include flexbox(column, flex-start, center); // Align items to the start (left) on mobile and tablet
+
+    .logo-section {
+      
+
+      .logo {
+        width: 170px;
+        margin: 20px 380px 150px 100px;
+
+        @include maxWidth(1024px) {
+          margin: 0 520px 50px 0;
+          width: 150px;
+        }
+
+        @include maxWidth(768px) {
+          margin: 80px 250px 0px 0px;
+        }
+
+        @include maxWidth(360px) {
+          margin: 200px 300px 0px 0px;
+        }
+      }
+    }
+
+    .pablo-img-section {
+      .pablo-img {
+        width: 600px;
+        margin-left: 70px;
+
+        @include maxWidth(1024px) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .login-form-section {
+    @include flexbox(column, center, center);
+    width: 750px;
+    height: 100vh;
+    padding: 16px;
+    background-color: #ffffff;
+    @include box-shadow;
+    border-radius: $border-radius;
+
+    @include maxWidth(1024px) {
+      width: 100vw;
+      height: auto;
+      margin-bottom: 200px;
+      box-shadow: none;
+      padding: 20px;
+      border-radius: 0;
+      background-color: transparent; // Remove background color
+      @include flexbox(column, center, center); // Ensure proper centering
+    }
+
+    @include maxWidth(768px) {
+     margin-right: 40px;
+     margin-bottom: 250px;
+    }
+
+    h1 {
+      font-family: "Avenir Next Bold";
+      margin-left: 135px;
+      margin-bottom: 2px;
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 54.64px;
+      color: $secondary-color;
+      align-self: flex-start;
+
+      @include maxWidth(1024px) {
+        margin-left: 70px;
+        text-align: start;
+        width: 100vw;
+      }
+
+      @include maxWidth(768px) {
+        margin-left: 28px;
+      }
+    }
+
+    p {
+      font-family: "Avenir Next Regular";
+      font-size: 18px;
+      line-height: 16px;
+      letter-spacing: 1px;
+      margin-top: 9px;
+      margin-left: 140px;
+      margin-bottom: 60px;
+      color: $tertiary-color;
+      align-self: flex-start;
+
+      @include maxWidth(1024px) {
+        margin-left: 78px;
+        text-align: start;
+        width: 100vw;
+      }
+
+      @include maxWidth(768px) {
+        margin-left: 30px;
+      }
+    }
+
+    form {
+      @include flexbox(column, center, center);
+
+      input {
+        width: 450px;
+        margin-bottom: 20px;
+        padding: 18px 10px;
+        outline: none;
+        border: 2px solid $input-border-color;
+        border-radius: 4px;
+
+        @include maxWidth(1024px) {
+          width: 80vw;
+        }
+      }
+
+      .password-input {
+        @include flexbox(row, center, center);
+        position: relative;
+
+        input {
+          flex: 1;
+        }
+
+        .show-password {
+          position: absolute;
+          margin-bottom: 18px;
+          right: 10px;
+          cursor: pointer;
+          color: $primary-color;
+          font-size: 18px;
+          font-family: "SF Compact Text";
+        }
+      }
+
+      .forgot-password {
+        margin-bottom: 20px;
+        color: $primary-color;
+        align-self: flex-start;
+        text-decoration: none;
+        font-size: 14px;
+        font-family: "SF Compact Text";
+
+        @include maxWidth(1024px) {
+          align-self: flex-start;
+        }
+      }
+
+      button {
+        padding: 18px 10px;
+        width: 470px;
+        background-color: $primary-color;
+        color: #ffffff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 20px;
+        font-family: "SF Compact Text";
+        @include transition(background-color);
+
+        &:hover {
+          background-color: darken($primary-color, 10%);
+        }
+
+        @include maxWidth(1024px) {
+          width: 82vw;
+        }
+
+        @include maxWidth(768px) {
+          width: 87vw;
+        }
+      }
+
+      .error-message {
+        color: red;
+        font-size: 0.875rem;
+        font-style: italic;
+        text-align: start;
+        align-self: flex-start;
+      }
+    }
+  }
+}
